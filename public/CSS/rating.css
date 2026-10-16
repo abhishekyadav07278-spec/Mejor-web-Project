@@ -1,0 +1,41 @@
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 3rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+/* Hover effect */
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #ffc107;
+}
+
+/* Selected stars */
+.rating input:checked ~ label {
+    color: #ffc107;
+}
+
+
+/*  static stars */
+
+.star {
+   font-size: 24px;
+    color: #ccc;
+}
+
+ .star-filled {
+    font-size: 24px;
+    color: #ffc107;
+}

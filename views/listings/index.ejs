@@ -1,0 +1,89 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<div class="filters mt-2 mb-2 ms-5">
+<div class="filter-item">
+  <div class="filt-icon"><i class="fa-solid fa-fire"></i></div> <p>Trending</p>
+</div>
+<div class="filter-item">
+  <div class="filt-icon"><i class="fa-solid fa-bed"></i></div> <p>Rooms</p>
+</div>
+<div class="filter-item">
+  <div class="filt-icon"> <i class="fa-brands fa-fort-awesome-alt"></i> </div> <p>castles</p>
+</div>
+<div class="filter-item">
+  <div class="filt-icon"> <i class="fa-solid fa-person-swimming"></i> </div> <p>Amazing pools</p>
+</div>
+<div class="filter-item">
+  <div class="filt-icon"><i class="fa-solid fa-city"></i> </div> <p>Iconic cities</p>
+</div>
+<div class="filter-item">
+  <div class="filt-icon"> <i class="fa-solid fa-mountain-city"></i></div> <p>Mountains</p>
+</div>
+<div class="filter-item">
+  <div class="filt-icon"> <i class="fa-solid fa-house-flood-water"></i> </div> <p>Lake Front</p>
+</div>
+
+<div class="filter-item">
+  <div class="filt-icon"> <i class="fa-solid fa-snowflake"></i> </div> <p>cold place</p>
+</div>
+
+<div class="filter-item">
+  <div class="filt-icon"> <i class="fa-solid fa-tent"></i> </div> <p>Domes</p>
+</div>
+
+<div class="filter-item">
+  <div class="filt-icon"> <i class="fa-solid fa-ship"></i> </div> <p>Boats</p>
+</div>
+
+<div class="show-taxs">
+  <div class="form-check-reverse form-switch mt-2">
+  <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+  <label class="form-check-label" for="switchCheckDefault">Total price after taxes</label>
+</div>
+</div>
+</div>
+
+
+
+    
+<body>
+ <h3 class="ms-5">All Listings</h3>
+
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 main ">
+      <% for(listing of allListing){ %>
+    <div class="card cols" style="width: 19rem;" >
+      <a href="/listings/<%= listing._id  %>">
+  <img src="<%= listing.image.url  %>" class="card-img-top" style="height: 16rem;" alt="image">
+  
+   <div class="card-img-overlay blur-hover"></div>
+   </a>
+  <div class="card-body">
+    <p class="card-text mb-0">
+ <b>  <%= listing.title  %><br></b>
+ ₹ <%= listing.price.toLocaleString("en-IN")  %>/night
+</p>
+<i class="tax-info"> +16% GST</i>
+  </div>
+  </div>
+ 
+
+        <% } %>
+  </div>
+
+
+  <script>
+let taxSwitch=document.querySelector("#switchCheckDefault");
+  let taxinfo=document.getElementsByClassName("tax-info")
+taxSwitch.addEventListener("click",()=>{
+    for(info of taxinfo){
+      if(info.style.display!="inline"){
+        info.style.display="inline"
+      }else{
+         info.style.display="none"
+      }
+    }
+})
+
+  </script>
+</body>

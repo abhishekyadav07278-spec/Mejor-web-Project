@@ -1,0 +1,173 @@
+
+<% layout("/layouts/boilerplate") %>
+<div class="card text-bg-dark hero-sec">
+  <img src="https://i.pinimg.com/736x/a0/31/43/a03143d671a1b5790218fb6eeae8e8c8.jpg" class="card-img" alt="...">
+  <div class="card-img-overlay ">
+    <div class="hero-cont">
+      <p class="card-title">MORE THAN JUST A STAY</p>
+    <h2 >
+    Find Your Perfect Stay With NESTLY
+  </h2>
+  <p class="card-text">Unique stays. Beautifull places. Unforgettable experience.
+    <br> Book hotels, villas and More- all in one place.
+  </p>
+    </div>
+
+    <div class="hero-filter mt-5 ">
+
+   <div class="f-op ">
+    <div class="h-f-i me-1 ms-3"><i class="fa-solid fa-location-dot"></i></div>
+    <div class="h-f-c"> <b>Where to?</b> <p class="mb-0">Search Destinations...</p></div>
+    
+   </div>
+    <hr>
+   <div class="f-op  ">
+    <div class="h-f-i me-1 ms-3"><i class="fa-regular fa-calendar"></i></div>
+    <div class="h-f-c"><b> Check in</b> <p class="mb-0">Add Date</p></div>
+   </div>
+
+   <div class="f-op   ">
+    <div class="h-f-i me-1 ms-3"><i class="fa-regular fa-calendar"></i></div>
+    <div class="h-f-c"><b> Check out</b> <p class="mb-0">Add Date</p></div>
+   </div>
+
+   <div class="f-op   ">
+    <div class="h-f-i me-1 ms-3"><i class="fa-solid fa-user-group"></i></i></div>
+    <div class="h-f-c"> <b>Guests</b> <p class="mb-0">1 room , 2 guest</p></div>
+   </div>
+   
+    </div>
+    
+  </div>
+</div>
+
+<div class="row">
+  <div class="explore-dest ms-5">
+    <p class="mb-0 ms-3">POPULAR DESTNATIONS</p>
+<a href="/listings" class="btn">
+<h3>Explore Top Destinations <span class="exp-arrow"><i class="fa-solid fa-arrow-right"></i></span></h3>
+
+</a>  </div>
+
+<div class="row col-8 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 main hero-list ">
+      <% for(listing of allListing){ %>
+    <div class="card cols" style="width: 19rem;" >
+      <a href="/listings/<%= listing._id  %>">
+  <img src="<%= listing.image.url  %>" class="card-img-top" style="height: 16rem;" alt="image">
+  
+   <div class="card-img-overlay blur-hover"></div>
+   </a>
+  <div class="card-body">
+    <p class="card-text">
+ <b>  <%= listing.title  %><br></b>
+ ₹ <%= listing.price.toLocaleString("en-IN")  %>
+</p>
+  </div>
+  </div>
+ 
+
+        <% } %>
+
+
+        
+  </div>
+  
+  <div class="col-3 why-sec">
+            <section class="why-section container my-5">
+
+    <!-- Small Heading -->
+    <p class="section-label mb-3">
+        WHY STAY WITH US
+    </p>
+
+    <!-- Main Heading -->
+    <h3 class="main-heading mb-3">
+        More than just<br>
+        a place to stay
+    </h3>
+
+
+    <!-- Features -->
+
+    <div class="feature-list">
+
+        <!-- Feature 1 -->
+        <div class="feature-item d-flex align-items-center ">
+
+            <div class="icon-box">
+                <i class="fa-solid fa-person-shelter"></i>
+            </div>
+
+            <div class="ms-4">
+                <b><p>Trusted and secure</p></b>
+                <p >Your safety is our priority.</p>
+            </div>
+
+        </div>
+
+
+        <!-- Feature 2 -->
+        <div class="feature-item d-flex align-items-center ">
+
+            <div class="icon-box">
+              <i class="fa-regular fa-calendar"></i>
+            </div>
+
+            <div class="ms-4">
+                <b><p>Flexible cancellations</p></b>
+                <p>Plan with confidence.</p>
+            </div>
+
+        </div>
+
+
+        <!-- Feature 3 -->
+        <div class="feature-item d-flex align-items-center ">
+
+            <div class="icon-box">
+              <i class="fa-solid fa-user-group"></i>
+            </div>
+
+            <div class="ms-4">
+               <b> <p>Hosts you'll love</p></b>
+                <p>Real people. Real stories.</p>
+            </div>
+
+        </div>
+
+
+        <!-- Feature 4 -->
+        <div class="feature-item d-flex align-items-center ">
+
+            <div class="icon-box">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div class="ms-4">
+                <p><b>A more sustainable way</b></p>
+                <p>Travel that gives back.</p>
+
+               
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Experience Card -->
+     <div class="card text-bg-dark rcard">
+  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h2> Explore<br> experiences</h2>
+  
+    <p class="card-text"><small> From local tours to<br>
+                food adventures.</small></p>
+                 <a href="/listings" class=" explore-btn">Explore <i class="fa-solid fa-arrow-right"></i> </a>
+  </div>
+</div>
+
+</section>
+        </div>
+
+</div>

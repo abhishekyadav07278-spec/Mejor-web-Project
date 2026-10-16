@@ -1,0 +1,56 @@
+<% layout("/layouts/boilerplate") %>
+   
+<body >
+<section class="edit-sec">
+    
+    <h2>Edit Your Listing</h2>
+    <p>Update the details of your property and keep it fresh for more bookings</p>
+
+<div class="row">
+<div class="col-6 edit-img-sec" >
+    <img src="<%= listing.image.url  %>" alt="...">
+
+</div>
+
+    <div class="col-6">       
+    <form method="post" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+
+               <div class="mb-3">
+            <label for="title" class="form-label"> <div class="lab-icon"><i class="fa-solid fa-t"></i></div> Title</label>
+            <input name="listing[title]" type="text" value="<%= listing.title  %>" class="form-control"  required >
+            <div class="invalid-feedback">please enter a title</div>
+        </div>
+         <div class="mb-3">
+            <label for="description" class="form-label" ><div class="lab-icon "><i class="fa-solid fa-align-right"></i></div> Description</label>
+            <textarea name="listing[discription]" class="form-control"  required > <%= listing.discription  %>  </textarea>
+             <div class="invalid-feedback">please enter a description</div>
+        </div>
+         
+         <div class="mb-3">
+            <label for="image" class="form-label" ><div class="lab-icon"><i class="fa-solid fa-link"></i></div>upload new image </label>
+               <input name="listing[image]" type="file" class="form-control" >
+              <div class="invalid-feedback">please enter valid link/URL</div>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label" ><div class="lab-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div> Price</label>
+              <input name="listing[price]" type="number" value="<%= listing.price  %>" class="form-control"  required >
+               <div class="invalid-feedback">price should be valid</div>
+        </div>
+         <div class="mb-3">
+            <label for="locatoin" class="form-label" ><div class="lab-icon"><i class="fa-solid fa-location-dot"></i></div> Location</label>
+            <input name="listing[location]" type="text" value="<%= listing.location  %>"class="form-control"  required>
+              <div class="invalid-feedback">location should be valid</div>
+        </div>
+         <div class="mb-3">
+            <label for="country" class="form-label" ><div class="lab-icon"><i class="fa-solid fa-earth-americas"></i></div> country</label>
+           <input name="listing[country]" type="text" value="<%= listing.country  %>"class="form-control"  required>
+             <div class="invalid-feedback">country name should be valid</div>
+        </div>
+       <a href="/listings" class="btn btn-light cancel-btn">Cancel</a>
+        <button class="edit-btn">Edit</button>
+
+    </form>
+    </div>
+</div>
+</section>
+</body>

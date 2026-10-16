@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row">
+<div class="add-new-img card col-5  offset-1 d-none d-lg-block" >
+<img src="https://i.pinimg.com/736x/ce/03/9b/ce039b5a95a3e373d12ecbcb7fce65ab.jpg" alt="...">
+
+  <div class="card-img-overlay new-img-text ">
+     <h3 class="new-brand"><i class="fa-solid fa-house-tsunami"></i> NESTLY</h3>
+     <p>Stay <i class="fa-solid fa-circle"></i>  Villas <i class="fa-solid fa-circle"></i> Experiences</p>
+    <h1>Create Your Next Stay</h1>
+    <p>Turn your unique space into a memoreble experience. And your property ans let travelers find theie next fevourite stay</p>
+</div>
+</div>
+
+<!--  Right form -->
+
+  <div class=" col-lg-5 ">
+<h3>Creat new listing</h3><br>
+
+    <form method="post" action="/listings"  novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label"> <div class="lab-icon"><i class="fa-solid fa-t"></i></div> Title</label>
+            <input name="listing[title]" type="text" placeholder="Enter title" class="form-control" required>
+            <div class="invalid-feedback">please enter a title</div>
+        </div>
+         <div class="mb-3">
+            <label for="description" class="form-label" ><div class="lab-icon "><i class="fa-solid fa-align-right"></i></div> Description</label>
+            <textarea name="listing[discription]" placeholder=" Enter description..." class="form-control"  required></textarea>
+             <div class="invalid-feedback">please enter a description</div>
+        </div>
+         
+         <div class="mb-3">
+            <label for="image" class="form-label" ><div class="lab-icon"><i class="fa-solid fa-link"></i></div>upload image </label>
+            <input name="listing[image]" type="file" class="form-control" required >
+             <div class="invalid-feedback">please enter valid link/URL</div>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label" ><div class="lab-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div> Price</label>
+            <input name="listing[price]" type="number" placeholder="Enter price" class="form-control"  required>
+             <div class="invalid-feedback">price should be valid</div>
+        </div>
+         <div class="mb-3">
+            <label for="locatoin" class="form-label" ><div class="lab-icon"><i class="fa-solid fa-location-dot"></i></div> Location</label>
+            <input name="listing[location]" type="text" placeholder="Enter Location" class="form-control"  required>
+             <div class="invalid-feedback">location should be valid</div>
+        </div>
+         <div class="mb-3">
+            <label for="country" class="form-label" ><div class="lab-icon"><i class="fa-solid fa-earth-americas"></i></div> country</label>
+           <input name="listing[country]" type="text" placeholder="Enter country" class="form-control"  required>
+            <div class="invalid-feedback">country name should be valid</div>
+        </div>
+        <button class="add-btn">ADD</button>
+    </form>
+  </div>
+ 
+</div>
+
