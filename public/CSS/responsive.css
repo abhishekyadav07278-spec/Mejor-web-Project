@@ -1,0 +1,561 @@
+
+
+
+/* ================================
+   HOME PAGE - MOBILE RESPONSIVE
+   ================================ */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+        height: auto;
+        min-height: 4.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        margin-left: 0.7rem !important;
+    }
+
+    .signup-btn{
+        margin-left: 2rem !important ;
+        margin-right: 2rem !important;
+       margin-top: 1rem !important;
+    }
+    .login-btn{
+         margin-left: 1rem !important ;
+        margin-right: 2rem !important;
+         margin-top: 1rem !important;
+
+
+    }
+    .addlist{
+      margin-top: 1rem !important;
+
+    }
+
+
+    /* Hero Section */
+    .hero-sec {
+        height: auto !important;
+        min-height: 32rem;
+        margin: 10px 0.5rem;
+        border-radius: 1.2rem !important;
+    }
+
+    .hero-sec img {
+        height: 32rem !important;
+        border-radius: 1.2rem;
+        object-fit: cover;
+    }
+
+    .hero-cont {
+        width: auto !important;
+        margin: 2rem 1rem 0 1rem;
+    }
+
+    .hero-cont .card-title {
+        font-size: 0.8rem;
+    }
+
+    .hero-cont h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-cont .card-text {
+        font-size: 0.9rem;
+    }
+
+
+    /* Hero Search / Filter */
+    .hero-filter {
+        width: auto;
+        height: auto;
+        min-height: 4rem;
+        margin: 2rem 1rem 0 1rem !important;
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem 0;
+    }
+
+    .f-op {
+        width: 100%;
+        min-height: 3.5rem;
+        border-radius: 1rem;
+    }
+
+    .h-f-i {
+        min-width: 3rem;
+        font-size: 1.2rem;
+    }
+
+    .h-f-c {
+        font-size: 0.85rem;
+    }
+
+    .hero-filter hr {
+        width: 85%;
+        margin: 0.2rem auto;
+    }
+
+
+    /* Popular Destinations */
+    .explore-dest {
+        margin-left: 1rem !important;
+        margin-top: 2rem;
+    }
+
+    .explore-dest h3 {
+        font-size: 1.5rem;
+    }
+
+
+    /* Main Row */
+    .main {
+        margin: 1rem !important;
+    }
+
+    .hero-list {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        overflow: visible;
+    }
+
+
+    /* Listing Cards */
+    .hero-list .card {
+        width: 100% !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-list .card-img-top {
+        width: 100%;
+        height: 15rem !important;
+        object-fit: cover;
+    }
+
+    .hero-list .card-body {
+        padding: 0.7rem 0.3rem;
+    }
+
+
+    /* Why Stay With Us */
+    .why-sec {
+        width: 100% !important;
+        margin-top: 2rem;
+        padding: 1rem;
+        border-radius: 1.2rem;
+    }
+
+    .why-section {
+        margin: 1rem 0 !important;
+    }
+
+    .main-heading {
+        font-size: 1.8rem;
+    }
+
+    .feature-item {
+        margin-bottom: 1.2rem;
+    }
+
+    .feature-item .ms-4 {
+        margin-left: 1rem !important;
+    }
+
+    .feature-list p {
+        font-size: 0.9rem;
+    }
+
+
+    /* Experience Card */
+    .rcard {
+        margin-top: 2rem;
+    }
+
+    .rcard img {
+        height: 13rem !important;
+        object-fit: cover;
+    }
+
+    .rcard h2 {
+        font-size: 1.7rem;
+    }
+
+
+    /* Footer */
+    .f-info {
+        height: auto;
+        padding: 1.5rem 0;
+    }
+
+    .f-info-socials {
+        font-size: 1.5rem;
+    }
+
+    .f-info-links {
+        flex-wrap: wrap;
+        gap: 0.7rem;
+    }
+
+    .f-info-links a {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+
+    .hero-sec {
+        min-height: 34rem;
+    }
+
+    .hero-sec img {
+        height: 34rem !important;
+    }
+
+    .hero-cont {
+        margin-left: 0.8rem;
+        margin-right: 0.8rem;
+    }
+
+    .hero-cont h2 {
+        font-size: 1.7rem;
+    }
+
+    .hero-filter {
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
+    }
+
+    .explore-dest h3 {
+        font-size: 1.3rem;
+    }
+
+    .hero-list .card-img-top {
+        height: 13rem !important;
+    }
+
+    .why-sec {
+        padding: 0.8rem;
+    }
+
+}
+
+/*  ========= =========================
+           all listings page
+      ================================== */
+
+@media (max-width: 768px) {
+
+    .filters {
+        margin-left: 1rem !important;
+        margin-right: 1rem;
+        gap: 1.5rem;
+        font-size: 0.7rem;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        white-space: nowrap;
+
+        /* Scrollbar hide */
+        scrollbar-width: none;
+    }
+
+    .filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-item {
+        flex-shrink: 0;
+        text-align: center;
+    }
+
+    .show-taxs {
+        flex-shrink: 0;
+        margin-left: 1rem !important;
+        font-size: 1rem;
+    }
+
+
+    .main {
+        margin: 1rem !important;
+       
+    }
+
+    .all-listing {
+        width: 100% !important;
+        height: auto !important;
+        margin-right: 2rem !important;
+        margin: 0 !important;
+        overflow: visible;
+    }
+
+
+    /* Listing Cards */
+    .all-listing .card {
+        width: 100% !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .all-listing .card-img-top {
+        width: 100%;
+        height: 15rem !important;
+        object-fit: cover;
+    }
+
+    .all-listing .card-body {
+        padding: 0.7rem 0.3rem;
+    }
+}
+
+/* =================================
+   ADD NEW LISTING - MOBILE
+   ================================= */
+
+@media (max-width: 768px) {
+
+    /* Main row */
+    .add-new-img {
+        width: 100% !important;
+        margin: 1rem 1rem 2rem 1rem !important;
+        padding: 0 !important;
+    }
+
+    /* Image */
+    .add-new-img img {
+        width: 95%;
+        height: 22rem;
+        object-fit: cover;
+        border-radius: 1.5rem;
+    }
+    
+
+   
+
+    /* Text on image */
+    .new-img-text {
+        width: auto !important;
+        margin: 1.5rem !important;
+    }
+
+    .new-img-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .new-img-text h1 {
+        font-size: 2rem;
+    }
+
+    .new-img-text p {
+        font-size: 0.9rem;
+    }
+
+
+    /* Form column */
+    .add-new-img + .col-lg-5 {
+        width: 100% !important;
+        padding: 0 1rem;
+    }
+
+    .add-new-img + .col-lg-5 h3 {
+        font-size: 1.6rem;
+    }
+
+    /* Form */
+    .add-new-img + .col-lg-5 form {
+        width: 100%;
+    }
+
+    /* Inputs */
+    .add-new-img + .col-lg-5 .form-control {
+        width: 100%;
+    }
+
+    /* Button */
+    .add-btn {
+        width: 100%;
+        height: 2.5rem;
+    }
+}
+
+/* ================================
+   EDIT PAGE - MOBILE RESPONSIVE
+   ================================ */
+
+@media (max-width: 768px) {
+
+    .edit-sec {
+        margin: 1rem;
+    }
+
+    .edit-sec h2 {
+        font-size: 1.7rem;
+    }
+
+    .edit-sec > p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Image section */
+    .edit-img-sec {
+        width: 100% !important;
+        margin-bottom: 2rem;
+    }
+
+    .edit-img-sec img {
+        width: 100%;
+        height: auto;
+        max-height: 25rem;
+        object-fit: cover;
+        border-radius: 1.5rem;
+    }
+
+    /* Form section */
+    .edit-sec .col-6 {
+        width: 100% !important;
+    }
+
+    .edit-sec form {
+        width: 100%;
+    }
+
+    /* Inputs */
+    .edit-sec .form-control {
+        width: 100%;
+    }
+
+    /* Buttons */
+    .edit-btn {
+        margin-left: 1rem;
+    }
+
+    .cancel-btn {
+        margin-left: 0 !important;
+    }
+}
+
+
+/* ==========================
+   Show llisting page
+============================= */
+
+
+@media (max-width: 768px) {
+
+    /* Main section */
+    .show-sec {
+        margin: 1rem !important;
+    }
+
+    /* Bootstrap columns ko mobile par full width */
+    .show-sec .left-sec,
+    .show-sec .info {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    /* Listing image */
+    .show-img {
+        height: auto !important;
+        width: 100%;
+    }
+
+    .show-img img {
+        width: 100% !important;
+        height: 20rem !important;
+        object-fit: cover;
+        border-radius: 1.5rem;
+    }
+
+    /* Listing information */
+    .info {
+        margin-top: 2rem;
+        padding: 1rem !important;
+    }
+
+    .info h2 {
+        font-size: 1.7rem;
+    }
+
+    .info p {
+        font-size: .9rem;
+        line-height: 1.5;
+    }
+
+    /* Edit / Delete buttons */
+    .show-btns {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    /* Review form */
+    .review {
+        width: 100% !important;
+        max-height: none !important;
+        margin-top: 2rem;
+    }
+
+    .review form {
+        width: 100%;
+    }
+
+    .review textarea {
+        width: 100%;
+    }
+
+    /* Reviews */
+    .review.overflow-auto {
+        max-height: 30rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    /* Map */
+    .show-sec .col-8 {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    #map {
+        width: 100% !important;
+        height: 40vh;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .lower-section {
+        margin: 2rem 1rem;
+    }
+
+    .map-section {
+        position: static;
+        margin-top: 2rem;
+    }
+
+    #map {
+        height: 350px;
+    }
+
+    .review-form {
+        padding: 1rem;
+    }
+
+    .rating label {
+        font-size: 1.7rem;
+    }
+
+}

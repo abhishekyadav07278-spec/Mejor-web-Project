@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-house-tsunami"></i> NESTLY</a>
+    <a class="navbar-brand" href="/"><i class="fa-solid fa-house-tsunami"></i> NESTLY</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" href="/">Home</a>
-        <a class="nav-link" href="/listings">All Listings</a>
+        <a class="nav-link" aria-current="page" href="/"><b>Home</b></a>
+        <a class="nav-link" href="/listings"><b>Explore</b></a>
 
       </div>
 
@@ -19,10 +19,10 @@
        </div>
 
         <div class="navbar-nav ms-auto">
-          <a class="nav-link btn btn-light me-3 addlist" href="/listings/new"> Become a Host</a>  
+          <a class="nav-link btn btn-light me-3 addlist" href="/listings/new"><b> Become a Host</b></a>  
           <% if(!currUser){ %>
-        <a class="btn btn-outline-secondary" aria-current="page" href="/signup">Sign Up</a>
-        <a class=" btn btn-success ms-5" href="/login">Login</a>
+        <a class="btn btn-outline-secondary signup-btn" aria-current="page" href="/signup">Sign Up</a>
+        <a class=" btn btn-danger ms-5 login-btn" href="/login">Login</a>
         <% } %>
         <% if(currUser){ %>
         <a class="btn btn-outline-secondary" href="/logout">Logout</a>

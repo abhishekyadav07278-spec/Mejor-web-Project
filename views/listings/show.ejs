@@ -13,37 +13,6 @@
         <img src="<%= list.image.url  %>" alt="image">
       </div>
 
-   <!-- Rating -->
-      <% if(currUser){ %>
-      <div class="review col-8">
-        <form method="POST" action="/listings/<%= list._id  %>/reviews" novalidate class="needs-validation" >
-            <h2>Leave a Review</h2>
-            <label for="input" class="form-lable">Rating</label>
-            <!-- stars -->
-   <div class="rating">
-    <input type="radio" id="star5" name="review[rating]" value="5">
-    <label for="star5">★</label>
-
-    <input type="radio" id="star4" name="review[rating]"value="4">
-    <label for="star4">★</label>
-
-    <input type="radio" id="star3" name="review[rating]" value="3">
-    <label for="star3">★</label>
-
-    <input type="radio" id="star2" name="review[rating]" value="2">
-    <label for="star2">★</label>
-
-    <input type="radio" id="star1" name="review[rating]" value="1">
-    <label for="star1">★</label>
-</div>
-            <label for="comment" class="form-lable">Comment</label>
-            <textarea id="comment" class="form-control mb-4" name="review[comment]" required></textarea>
-             <div class="invalid-feedback">please add some comments</div>
-            <button  class="btn btn-outline-dark">Submit</button>
-        </form>
-    </div>
-    <% } %>
-    
       </div>
  
 
@@ -73,46 +42,179 @@
     <% } %>
  </div>
 
- <!-- Show all reviews  -->
-  <% if(list.reviews.length>0) {%>
-<h5 class="mt-5">All Reviews</h5>
- <div class="review overflow-auto">
- 
- <% for(review of list.reviews){ %>
-    <div class="card  ">
-  <div class="card-header">
-    <i class="fa-solid fa-circle-user"></i> <%= review.author.username %>
-  </div>
-  <div class="card-body">
-    
-     <p class="card-text">
-        <% for(let i=1; i<=review.rating;i++) { %> 
-    <span class="star-filled">★</span>
-        <% } %> 
-      <% for(let i=1; i<=(5-review.rating);i++) { %> 
-    <span class="star">★</span>
-        <% } %> 
-      <br>
-       <%= review.comment %></p>
 
-   
-   <form method="post" action="/listings/<%= list._id %>/reviews/<%= review._id %>?_method=DELETE">
-     <button  class="btn btn-sm btn-outline-dark">Delete</button>
-   </form>
-  
-  </div>
-</div>
- <% } %>
-</div>
- <% } %>
-
- <!-- map  -->
-<div class="col-8">
-  <h5 class="mt-5">Where you'll be</h5>
-  <div id="map"></div>
- </div>
     </div>
    </div>
+
+
+ <div class="lower-section">
+
+    <div class="row g-4">
+
+        <!-- LEFT SIDE : REVIEWS -->
+        <div class="col-lg-7 col-md-7 col-12">
+
+            <!-- Leave a Review -->
+            <% if(currUser){ %>
+
+            <div class="review-form">
+
+                <h3>Leave a Review</h3>
+
+                <form 
+                    method="POST" 
+                    action="/listings/<%= list._id %>/reviews" 
+                    novalidate 
+                    class="needs-validation"
+                >
+
+                    <!-- Rating -->
+                    <label class="form-label">Rating</label>
+
+                    <div class="rating">
+
+                        <input type="radio" id="star5" name="review[rating]" value="5">
+                        <label for="star5">★</label>
+
+                        <input type="radio" id="star4" name="review[rating]" value="4">
+                        <label for="star4">★</label>
+
+                        <input type="radio" id="star3" name="review[rating]" value="3">
+                        <label for="star3">★</label>
+
+                        <input type="radio" id="star2" name="review[rating]" value="2">
+                        <label for="star2">★</label>
+
+                        <input type="radio" id="star1" name="review[rating]" value="1">
+                        <label for="star1">★</label>
+
+                    </div>
+
+
+                    <!-- Comment -->
+                    <label for="comment" class="form-label">
+                        Comment
+                    </label>
+
+                    <textarea
+                        id="comment"
+                        class="form-control mb-2"
+                        name="review[comment]"
+                        required
+                    ></textarea>
+
+                    <div class="invalid-feedback">
+                        Please add some comments.
+                    </div>
+
+
+                    <button class="btn btn-outline-dark mt-2">
+                        Submit
+                    </button>
+
+                </form>
+
+            </div>
+
+            <% } %>
+
+
+            <!-- ALL REVIEWS -->
+            <% if(list.reviews.length > 0) { %>
+
+            <div class="all-reviews">
+
+                <h3>All Reviews</h3>
+
+                <div class="reviews-container">
+
+                    <% for(review of list.reviews) { %>
+
+                    <div class="card review-card">
+
+                        <div class="card-header">
+
+                            <i class="fa-solid fa-circle-user"></i>
+
+                            <%= review.author.username %>
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <!-- Rating Stars -->
+
+                            <div class="review-stars">
+
+                                <% for(let i = 1; i <= review.rating; i++) { %>
+
+                                    <span class="star-filled">★</span>
+
+                                <% } %>
+
+
+                                <% for(let i = 1; i <= (5-review.rating); i++) { %>
+
+                                    <span class="star">★</span>
+
+                                <% } %>
+
+                            </div>
+
+
+                            <!-- Comment -->
+
+                            <p class="card-text">
+                                <%= review.comment %>
+                            </p>
+
+
+                            <!-- Delete Review -->
+
+                            <form
+                                method="post"
+                                action="/listings/<%= list._id %>/reviews/<%= review._id %>?_method=DELETE"
+                            >
+
+                                <button class="btn btn-sm btn-outline-dark">
+                                    Delete
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <% } %>
+
+                </div>
+
+            </div>
+
+            <% } %>
+
+        </div>
+
+
+
+        <!-- RIGHT SIDE : MAP -->
+        <div class="col-lg-5 col-md-5 col-12">
+
+            <div class="map-section">
+
+                <h3>Where you'll be</h3>
+
+                <div id="map"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 </div>
 
